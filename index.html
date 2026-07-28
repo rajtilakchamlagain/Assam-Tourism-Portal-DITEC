@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Assam — Official Tourism & G2C Portal | Government of Assam</title>
+  <meta name="description" content="Official Government of Assam Tourism Portal. Explore hostels, eco-homestays, tourist lodges, live flood travel advisories, seasonal calendars, and iconic destinations like Sonbeel wetland, Nagsankar Temple, Kaziranga, and Majuli.">
+  <meta name="keywords" content="Assam Tourism, G2C, Homestays, Hostels, Flood Advisory, ASDMA, Sonbeel, Nagsankar, Kaziranga, Majuli, Haflong, Sivasagar, Government of Assam">
+  
+  <!-- CSS Design System & Components -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Accessible Skip to Main Content -->
+  <a href="#main-content" class="skip-to-content">Skip to Main Content</a>
+
+  <!-- 1. ePrastuti & GIGW Compliant Government Top Utility Bar -->
+  <aside class="gov-topbar" role="complementary" aria-label="Government Utility Top Bar">
+    <div class="container">
+      <div class="gov-topbar-left">
+        <div class="gov-emblem-text">
+          🇮🇳 <span>GOVERNMENT OF ASSAM (SIMULATION)</span> | অসম চৰকাৰ • Tourism Portal Prototype
+        </div>
+        <span style="color: #94A3B8;">|</span>
+        <span style="font-size: 0.78rem; background: var(--primary-red); color: #fff; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700;">🎓 DITEC Internship Assignment (Not an Official Govt Website)</span>
+      </div>
+      
+      <div class="gov-topbar-right">
+        <!-- Accessibility Font Sizer -->
+        <div class="accessibility-tools" aria-label="Text size accessibility adjustment">
+          <span style="font-size: 0.72rem; color: #CBD5E1; margin-right: 2px;">Font Size:</span>
+          <button class="btn-a" id="font-decrease" title="Decrease font size">A-</button>
+          <button class="btn-a" id="font-reset" title="Reset font size">A</button>
+          <button class="btn-a" id="font-increase" title="Increase font size">A+</button>
+        </div>
+
+        <!-- ePrastuti Theme Toggle -->
+        <button class="btn-theme" id="theme-toggle" title="Toggle high contrast and dark color modes">🌗 Dark Mode</button>
+
+        <!-- Official Bilingual / Multilingual Simulator -->
+        <div class="lang-selector" id="lang-selector" aria-label="Select Portal Language">
+          <span class="lang-badge" style="background: var(--primary-red);" data-lang="EN">English</span>
+          <span class="lang-badge" data-lang="AS">অসমীয়া</span>
+          <span class="lang-badge" data-lang="BN">বাংলা</span>
+          <span class="lang-badge" data-lang="BO">बड़ो</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. Main Branding Header & Navigation Kiosk -->
+  <header class="main-header" role="banner">
+    <div class="container">
+      <div class="branding-group">
+        <div class="emblem-box">
+          <!-- State Seal Graphic Representation -->
+          <svg class="emblem-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="National Emblem Representation">
+            <circle cx="50" cy="50" r="46" fill="var(--tea-emerald)" stroke="var(--silk-gold)" stroke-width="5"/>
+            <path d="M50 22 L70 55 L60 55 L60 80 L40 80 L40 55 L30 55 Z" fill="var(--silk-gold)"/>
+            <circle cx="50" cy="40" r="6" fill="var(--primary-red)"/>
+            <text x="50" y="73" font-size="8" font-weight="bold" fill="#0F172A" text-anchor="middle">ATDC</text>
+          </svg>
+          <div class="portal-title">
+            <h1>Assam Tourism <span class="badge-awesome">Awesome Assam</span></h1>
+            <span class="subtitle">Official G2C Hospitality & Heritage Portal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav aria-label="Primary Navigation">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open mobile menu">☰</button>
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#flood-advisory" class="nav-link" style="color: #D32F2F; font-weight: 700;">🌊 Live Flood Advisory</a></li>
+          <li><a href="#seasonal" class="nav-link">📅 Seasonal Stays</a></li>
+          <li><a href="#destinations" class="nav-link">Discover Places</a></li>
+          <li><a href="#lodging" class="nav-link">Hostels & Homestays</a></li>
+          <li><a href="#helpdesk" class="nav-link" style="font-weight: 800;">🚨 Helpline 1363</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: none; @media(min-width: 1150px){ display: block; }">
+        <button class="btn btn-gold" style="padding: 0.6rem 1.1rem; font-size: 0.82rem;" onclick="openPermitSimulator()">
+          🎟️ Book Safaris ↗
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 3. Hero Showcase -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content animate-fade">
+          <div class="tagline">
+            <span>🛡️ Official Govt of Assam Citizen Initiative</span>
+          </div>
+          
+          <h1 id="hero-title">Experience the Eternal Charm of <span class="highlight">Awesome Assam</span></h1>
+          <p class="hero-description" id="hero-dynamic-tag">
+            Land of the Red River and Blue Hills! Discover untamed biodiversity, mystical 4th-century temple lakes, seasonal wetland spectacles, live travel flood advisories, and authentic government-verified youth hostels & tribal homestays.
+          </p>
+
+          <!-- Interactive Search & Reservation Glass Box -->
+          <div class="search-box">
+            <div class="search-input-group">
+              <label for="hero-district-select">📍 Target Destination / District</label>
+              <select id="hero-district-select">
+                <option value="">All Districts & Regions</option>
+                <option value="Karimganj">Sonbeel Lake (Karimganj / Barak Valley)</option>
+                <option value="Biswanath">Nagsankar Shiva Temple (Biswanath)</option>
+                <option value="Golaghat">Kaziranga National Park (Golaghat)</option>
+                <option value="Majuli">Majuli River Island Satras</option>
+                <option value="Kamrup">Kamakhya & Guwahati Promenade</option>
+                <option value="Dima Hasao">Haflong Hill Station & Jatinga</option>
+                <option value="Sivasagar">Sivasagar Ahom Royal Monuments</option>
+              </select>
+            </div>
+
+            <div class="search-input-group">
+              <label for="hero-type-select">🏨 Accommodation Type</label>
+              <select id="hero-type-select">
+                <option value="all">All Verified Stays</option>
+                <option value="hostel">🎒 Backpackers Youth Hostels (₹450+)</option>
+                <option value="homestay">🏡 Eco & Tribal Homestays (₹1100+)</option>
+                <option value="lodge">🏛️ Govt Tourist Lodges (ATDC Official)</option>
+                <option value="hotel">👑 Heritage Luxury Hotels</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" id="hero-search-btn" style="padding: 1rem 2rem; font-size: 1rem; height: 100%;">
+              🔍 Explore Verified Stays →
+            </button>
+          </div>
+
+          <!-- Animated Live Stats Ribbon -->
+          <div class="stats-ribbon">
+            <div class="stat-card">
+              <h3 id="stat-parks">7+</h3>
+              <p>National Parks & Tiger Reserves</p>
+            </div>
+            <div class="stat-card">
+              <h3 id="stat-wetlands">40+</h3>
+              <p>Wetland Lakes & Island Satras</p>
+            </div>
+            <div class="stat-card">
+              <h3 id="stat-homestays">450+</h3>
+              <p>Verified Hostels & Eco-Homestays</p>
+            </div>
+            <div class="stat-card">
+              <h3 id="stat-heritage">600+</h3>
+              <p>Years of Regal Ahom Heritage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚨 4. NEW: ASDMA Live Flood News & Travel Safety Advisory Desk -->
+    <section id="flood-advisory" style="background: linear-gradient(180deg, var(--bg-main), var(--bg-surface)); padding: 5rem 0; border-bottom: 2px solid var(--border-color); position: relative;" aria-labelledby="flood-heading">
+      <div class="container">
+        
+        <!-- Live Ticker Ribbon -->
+        <div style="background: var(--primary-red); color: #fff; padding: 0.75rem 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+          <div style="background: #fff; color: var(--primary-red); font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: var(--radius-sm); text-transform: uppercase;">
+            📢 Live ASDMA Ticker
+          </div>
+          <div style="flex: 1; font-weight: 600; font-size: 0.92rem;">
+            ⚡ Monsoon Advisory: Sonbeel wetland lake boating active under safety circular • Majuli ferry crossings running normally today • All approach roads to Nagsankar Shiva Shrine and Haflong Hill Station clear!
+          </div>
+          <span style="font-size: 0.8rem; opacity: 0.9;">Dial <strong>1070</strong> (ASDMA Emergency)</span>
+        </div>
+
+        <div class="section-header">
+          <span class="section-tag" style="color: var(--primary-red);">🚨 State Flood & Weather Safety Matrix</span>
+          <h2 id="flood-heading">Real-Time Destination Safety Advisory</h2>
+          <p>Assam Tourism integrated directly with the <strong>Assam State Disaster Management Authority (ASDMA)</strong> and Inland Waterways to inform tourists exactly which heritage spots and roads are safe or seasonally affected.</p>
+        </div>
+
+        <!-- Realtime Search Bar for Advisory -->
+        <div style="max-width: 650px; margin: 0 auto 2.5rem auto;">
+          <input type="text" id="flood-search-input" placeholder="🔍 Check safety status by destination, river, or district (e.g. Sonbeel, Majuli, Nagsankar)..." style="width: 100%; padding: 0.85rem 1.3rem; border-radius: var(--radius-full); border: 2px solid var(--primary-red); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.95rem; box-shadow: var(--shadow-sm);">
+        </div>
+
+        <!-- Safety Filter Pills -->
+        <div class="filter-bar" id="flood-filters">
+          <button class="filter-btn active" data-filter="ALL">🌐 All Locations (7)</button>
+          <button class="filter-btn" data-filter="OPEN_SAFE" style="border-color: #0A5C36;">🟢 Open & Normal (4)</button>
+          <button class="filter-btn" data-filter="CAUTION_ACTIVE" style="border-color: #F59E0B;">🟡 Seasonal / Active Caution (2)</button>
+          <button class="filter-btn" data-filter="TEMPORARY_RESTRICTED" style="border-color: #D32F2F;">🔴 Temporarily Restricted (1)</button>
+        </div>
+
+        <!-- Flood Advisory Cards Container -->
+        <div class="card-grid" id="flood-advisory-grid">
+          <!-- Dynamically populated via js/app.js -->
+        </div>
+
+        <div style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 1.2rem 1.8rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <span style="font-size: 1.8rem;">🛡️</span>
+            <div>
+              <h4 style="font-size: 1rem;">Government Tourist Protection Policy</h4>
+              <p style="font-size: 0.82rem; color: var(--text-secondary);">In case of sudden weather warnings, verified G2C homestays and ATDC lodges guarantee free rescheduling or 100% deposit refund.</p>
+            </div>
+          </div>
+          <a href="#helpdesk" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Contact Emergency Support →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 📅 5. NEW: Seasonal Destinations & Festival Calendar -->
+    <section id="seasonal" style="background: var(--bg-surface); padding: 5rem 0; border-bottom: 1px solid var(--border-color);" aria-labelledby="seasonal-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" style="color: var(--tea-emerald);">🌿 Experience Assam Year-Round</span>
+          <h2 id="seasonal-heading">Seasonal Destinations & Calendar Grid</h2>
+          <p>Every season unveils a completely different magical aspect of Assam—from roaring monsoon lake expanses at Sonbeel to grand winter tiger safaris and spring Rongali Bihu celebrations.</p>
+        </div>
+
+        <!-- Seasonal Tab Selector Pills -->
+        <div class="filter-bar" id="season-filters" style="margin-bottom: 3rem;">
+          <button class="filter-btn active" data-season="monsoon">🌦️ Monsoon Wonders (June–Sept)</button>
+          <button class="filter-btn" data-season="autumn">🌾 Autumn & Raas (Oct–Nov)</button>
+          <button class="filter-btn" data-season="winter">🦏 Winter Wildlife (Dec–Feb)</button>
+          <button class="filter-btn" data-season="spring">🌸 Spring & Rongali Bihu (March–May)</button>
+        </div>
+
+        <!-- Seasonal Header Descriptor Box -->
+        <div id="seasonal-header-box" style="text-align: center; max-width: 720px; margin: 0 auto 2.5rem auto; padding: 1.5rem; background: var(--bg-main); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <!-- Injected via js/app.js -->
+        </div>
+
+        <!-- Seasonal Grid Container -->
+        <div class="card-grid" id="seasonal-grid">
+          <!-- Injected via js/app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Interactive Destination Showcase (Sonbeel, Nagsankar, Kaziranga, Majuli...) -->
+    <section class="container" id="destinations" style="padding: 5rem 1.5rem;" aria-labelledby="dest-heading">
+      <div class="section-header">
+        <span class="section-tag">✨ Curated Heritage & Ecological Wonders</span>
+        <h2 id="dest-heading">Iconic & Untamed Destinations</h2>
+        <p>From Asia's 2nd largest seasonal wetland at Sonbeel to the 4th-century sacred softshell turtle pond of Nagsankar Temple—explore Assam with comprehensive official guides.</p>
+      </div>
+
+      <!-- Destination Category Filter Pills -->
+      <div class="filter-bar" id="dest-filters">
+        <button class="filter-btn active" data-filter="all">🌐 All Destinations</button>
+        <button class="filter-btn" data-filter="wetland">🌊 Wetlands & Seasonal Lakes (Sonbeel)</button>
+        <button class="filter-btn" data-filter="spiritual">🕉️ Sacred Shrines (Nagsankar / Kamakhya)</button>
+        <button class="filter-btn" data-filter="wildlife">🦏 Wildlife & Rhino Reserves (Kaziranga)</button>
+        <button class="filter-btn" data-filter="heritage">👑 River Islands & Ahom Palaces (Majuli / Sivasagar)</button>
+        <button class="filter-btn" data-filter="hills">🏔️ Hill Stations & Valleys (Haflong)</button>
+      </div>
+
+      <!-- Destinations Grid Container -->
+      <div class="card-grid" id="destinations-grid">
+        <!-- Loaded dynamically via js/app.js -->
+      </div>
+    </section>
+
+    <!-- 7. G2C Verified Hospitality Registry (Hostels, Homestays, Hotels & Lodges) -->
+    <section id="lodging" style="background: var(--bg-surface); padding: 5rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" aria-labelledby="lodging-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">🏡 Government to Citizen Hospitality Connect</span>
+          <h2 id="lodging-heading">Verified Hostels, Homestays & Tourist Lodges</h2>
+          <p>Direct zero-commission lodging reservations connecting citizens, students, and global backpackers directly with inspected local hosts and official ATDC properties.</p>
+        </div>
+
+        <!-- Realtime Filter & Search Header -->
+        <div style="max-width: 600px; margin: 0 auto 2.5rem auto;">
+          <div style="position: relative;">
+            <input type="text" id="lodging-search-input" placeholder="🔍 Search by name, district (Majuli, Guwahati, Biswanath), or category..." style="width: 100%; padding: 0.9rem 1.2rem; border-radius: var(--radius-full); border: 2px solid var(--border-color); background: var(--bg-main); color: var(--text-primary); outline: none; font-size: 0.95rem;">
+          </div>
+        </div>
+
+        <!-- Accommodation Type Pill Filters -->
+        <div class="filter-bar" id="lodging-filters">
+          <button class="filter-btn active" data-filter="all">🌟 All Accommodations</button>
+          <button class="filter-btn" data-filter="hostel">🎒 Backpackers Youth Hostels</button>
+          <button class="filter-btn" data-filter="homestay">🏡 Riverside & Eco Homestays</button>
+          <button class="filter-btn" data-filter="lodge">🏛️ Govt Tourist Lodges (ATDC)</button>
+          <button class="filter-btn" data-filter="hotel">👑 Premium Heritage Hotels</button>
+        </div>
+
+        <!-- Lodging Grid Container -->
+        <div class="card-grid" id="lodging-grid">
+          <!-- Loaded dynamically via js/app.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            🛡️ All homestays and backpackers camps displayed here are vetted under the <strong>Assam Bed & Breakfast & Homestay Scheme</strong> for safety, hygiene, and authentic cuisine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. G2C Citizen Services & Single-Window Kiosk -->
+    <section class="container" id="g2c-kiosk" style="padding: 5rem 1.5rem;" aria-labelledby="kiosk-heading">
+      <div class="section-header">
+        <span class="section-tag">🏛️ Digital Assam Mission</span>
+        <h2 id="kiosk-heading">G2C Citizen Service Touchpoints</h2>
+        <p>Seamlessly access e-District tourist services, hire local bilingual certified guides, or apply for protected area safari permits online.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <!-- Kiosk 1: Guide Directory -->
+        <div style="background: linear-gradient(135deg, var(--gov-topbar-bg), #0F172A); color: #fff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">👮‍♂️</div>
+            <h3 style="color: var(--silk-gold); font-size: 1.6rem; margin-bottom: 0.8rem;">Certified Tour Guide Registry</h3>
+            <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+              Connect directly with trained youth from local communities (Majuli, Barak Valley, Dima Hasao, Sivasagar) who hold official government guiding licenses.
+            </p>
+          </div>
+          <button class="btn btn-gold" onclick="openGuideModal()" style="width: 100%;">
+            Browse Certified Guides ↗
+          </button>
+        </div>
+
+        <!-- Kiosk 2: Safari & Permit Passes -->
+        <div style="background: linear-gradient(135deg, #0A5C36, #043820); color: #fff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐘</div>
+            <h3 style="color: #4ADE80; font-size: 1.6rem; margin-bottom: 0.8rem;">Online Safari & Ferry Permits</h3>
+            <p style="color: #E2E8F0; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+              Generate single-window electronic entry tickets for Kaziranga Elephant/Jeep safaris, Sonbeel boat inspections, and Brahmaputra ferry crossings.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="openPermitSimulator()" style="background: #ffffff; color: var(--tea-emerald); font-weight: 800; width: 100%;">
+            Apply for E-Permits ↗
+          </button>
+        </div>
+
+        <!-- Kiosk 3: Citizen Grievance & Feedback -->
+        <div style="background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-lg); border: 2px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📋</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">CPGRAMS Feedback Desk</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+              Encountered overcharging at homestays or require maintenance reports at public tourist points? Submit real-time feedback directly to the Tourism Directorate.
+            </p>
+          </div>
+          <a href="#helpdesk" class="btn btn-secondary" style="width: 100%; text-align: center;">
+            Submit Grievance / Feedback ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Emergency Tourist Police & Helpdesk Locator -->
+    <section id="helpdesk" style="background: linear-gradient(180deg, var(--bg-main), rgba(211,47,47,0.05)); padding: 5rem 0; border-top: 2px solid var(--primary-red);" aria-labelledby="help-heading">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3rem; align-items: center;">
+          
+          <!-- Helpline Banner Info -->
+          <div>
+            <span class="badge-awesome" style="background: var(--primary-red); margin-bottom: 1rem; display: inline-block;">GIGW Citizen Transparency</span>
+            <h2 id="help-heading" style="font-size: 2.6rem; margin-bottom: 1.2rem;">24/7 Tourist Assistance & Helpline</h2>
+            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem;">
+              The Government of Assam prioritizes tourist safety and seamless communication. Our integrated helpdesk networks work alongside Assam Tourist Police and local district administrations.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+              <div style="background: var(--bg-surface); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.2rem;">
+                <span style="font-size: 2.2rem; background: rgba(211,47,47,0.1); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-red);">📞</span>
+                <div>
+                  <h4 style="font-size: 1.2rem;">National Tourist Helpline Toll-Free</h4>
+                  <span style="font-size: 1.6rem; font-weight: 800; color: var(--primary-red);">1363</span> <span style="color: var(--text-muted); font-size: 0.85rem;">(Multi-lingual)</span>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-surface); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.2rem;">
+                <span style="font-size: 2.2rem; background: rgba(10,92,54,0.1); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--tea-emerald);">🚓</span>
+                <div>
+                  <h4 style="font-size: 1.2rem;">Assam Emergency Police Support</h4>
+                  <span style="font-size: 1.6rem; font-weight: 800; color: var(--tea-emerald);">112</span> <span style="color: var(--text-muted); font-size: 0.85rem;">(Instant Dispatch)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Citizen Feedback & Inquiry Form -->
+          <div style="background: var(--bg-surface); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Citizen Inquiry & Feedback Form</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.8rem;">Responses processed by Website Development Cell / ATDC within 24 working hours.</p>
+
+            <form id="g2c-help-form">
+              <div style="margin-bottom: 1.2rem;">
+                <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.4rem;">Citizen Name *</label>
+                <input type="text" required placeholder="Enter full name" style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-main); color: var(--text-primary);">
+              </div>
+
+              <div style="margin-bottom: 1.2rem;">
+                <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.4rem;">Contact Email or SMS Phone *</label>
+                <input type="text" required placeholder="example@assam.gov.in or Mobile No." style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-main); color: var(--text-primary);">
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.4rem;">Subject & Message / Grievance *</label>
+                <textarea required rows="4" placeholder="Mention facility name or inquiry details..." style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-main); color: var(--text-primary); resize: vertical;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem;">
+                Submit to Directorate Helpdesk →
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. Official GIGW / ePrastuti Mandated Footer -->
+  <footer class="gov-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: State Branding & Academic Disclaimer -->
+        <div class="footer-col">
+          <h4 style="color: #ffffff; font-size: 1.3rem; display: flex; align-items: center; gap: 0.6rem;">
+            🇮🇳 Government of Assam (Prototype)
+          </h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.8rem; color: #E2E8F0; background: rgba(211,47,47,0.25); padding: 0.6rem; border-left: 4px solid var(--primary-red); border-radius: 4px;">
+            <strong>🎓 DITEC Internship Assignment Notice:</strong> This web application is an academic frontend prototype developed as an assignment during a **DITEC Internship**. It is NOT an official portal of the Government of Assam or ATDC.
+          </p>
+          <p style="font-size: 0.85rem; line-height: 1.7; margin-bottom: 1rem; color: #CBD5E1;">
+            Designed and engineered in compliance with the **ePrastuti Framework** and **Guidelines for Indian Government Websites (GIGW 3.0)** for demonstration purposes.
+          </p>
+        </div>
+
+        <!-- Col 2: Tourist Places Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Iconic Sights</h4>
+          <ul>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('sonbeel'),500)">Sonbeel Seasonal Lake & Wetland</a></li>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('nagsankar'),500)">Nagsankar Shiva Shrine & Turtles</a></li>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('kaziranga'),500)">Kaziranga Rhino Safaris</a></li>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('majuli'),500)">Majuli Island Satras & Maskcraft</a></li>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('haflong'),500)">Haflong Emerald Hills & Jatinga</a></li>
+            <li><a href="#destinations" onclick="setTimeout(()=>openDestinationModal('sivasagar'),500)">Sivasagar Ahom Dynasty Rang Ghar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hospitality & Safety Kiosk -->
+        <div class="footer-col">
+          <h4>Safety & Verified Stays</h4>
+          <ul>
+            <li><a href="#flood-advisory">🌊 Live ASDMA Flood & Travel Advisory</a></li>
+            <li><a href="#seasonal">📅 Seasonal Tourism Calendar</a></li>
+            <li><a href="#lodging">Brahmaputra Backpackers Hostels</a></li>
+            <li><a href="#lodging">Majuli Mising Tribal Homestays</a></li>
+            <li><a href="#lodging">ATDC Prashanti Govt Tourist Lodges</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: GIGW Governance & Gateway Links -->
+        <div class="footer-col">
+          <h4>Government Gateways</h4>
+          <ul>
+            <li><a href="https://assam.gov.in" target="_blank" rel="noopener noreferrer">Assam State Portal (assam.gov.in) ↗</a></li>
+            <li><a href="https://mygov.in" target="_blank" rel="noopener noreferrer">MyGov India & Assam Citizens ↗</a></li>
+            <li><a href="https://digitalindia.gov.in" target="_blank" rel="noopener noreferrer">Digital India Mission ↗</a></li>
+            <li><a href="https://eprastuti.assam.gov.in" target="_blank" rel="noopener noreferrer">ePrastuti Framework Portal ↗</a></li>
+            <li><a href="#helpdesk">Web Information Manager & Helpdesk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Policy Ribbon -->
+      <div class="footer-bottom">
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.2rem;">
+          <a href="#" style="color: var(--silk-gold);">Copyright Policy</a> •
+          <a href="#" style="color: var(--silk-gold);">Hyperlinking Policy</a> •
+          <a href="#" style="color: var(--silk-gold);">Privacy & Accessibility Statement</a> •
+          <a href="#" style="color: var(--silk-gold);">Sitemap</a> •
+          <a href="#" style="color: var(--silk-gold);">Help & FAQ</a>
+        </div>
+        <p>© 2026 Department of Tourism, Government of Assam. Content Managed by Directorate of Tourism & Website Development Cell, IT Dept.</p>
+        <p style="margin-top: 0.4rem; font-size: 0.75rem; color: #64748B;">Last Reviewed & Certified: July 2026 | W3C WCAG 2.1 AA Compliant</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 11. Dynamic Portal Modal Container -->
+  <div class="modal-overlay" id="portal-modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close dialog">&times;</button>
+      <div id="modal-body-content">
+        <!-- Dynamically injected via js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. Toast Notification Container -->
+  <div class="toast-container" id="toast-container" role="alert" aria-live="polite"></div>
+
+  <!-- Javascript Engines -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/g2c-services.js"></script>
+
+</body>
+</html>

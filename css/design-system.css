@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;600;700&display=swap');
+
+:root {
+  /* Assamese Cultural Color Palette (Light / Default Theme) */
+  --primary-red: #D32F2F;        /* Inspired by Gamusa crimson border */
+  --primary-red-hover: #B71C1C;
+  --tea-emerald: #0A5C36;        /* Tea gardens & Kaziranga lush green */
+  --tea-emerald-dark: #063C23;
+  --silk-gold: #D4AF37;          /* Muga Silk golden yellow */
+  --silk-gold-light: #FBF7E7;
+  
+  /* Neutral Typography & Background Tokens */
+  --bg-main: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-color: #E2E8F0;
+  --border-focus: #0A5C36;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+  
+  /* Government Top Bar Tokens */
+  --gov-topbar-bg: #1E293B;
+  --gov-topbar-text: #F8FAFC;
+  --gov-topbar-accent: #E5A93C;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 25px rgba(10, 92, 54, 0.25);
+
+  /* Geometry & Animation */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-scale: 16px;
+}
+
+/* Dark / High Contrast Theme Support (ePrastuti Mandated) */
+[data-theme="dark"] {
+  --bg-main: #0B1120;
+  --bg-surface: #1E293B;
+  --bg-card: #141E33;
+  --bg-glass: rgba(30, 41, 59, 0.85);
+  --border-color: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* High Contrast Theme Option */
+[data-theme="high-contrast"] {
+  --bg-main: #000000;
+  --bg-surface: #111111;
+  --bg-card: #000000;
+  --border-color: #FFFF00;
+  --text-primary: #FFFF00;
+  --text-secondary: #FFFFFF;
+  --text-muted: #DDDDDD;
+  --primary-red: #FF3333;
+  --tea-emerald: #00FF66;
+  --silk-gold: #FFFF00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-scale);
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Bengali', -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Container Pattern */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ePrastuti / GIGW Utility Top Bar */
+.gov-topbar {
+  background: var(--gov-topbar-bg);
+  color: var(--gov-topbar-text);
+  font-size: 0.825rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--primary-red);
+  position: relative;
+  z-index: 100;
+}
+
+.gov-topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gov-topbar-left, .gov-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.gov-emblem-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.gov-emblem-text span {
+  color: var(--silk-gold);
+}
+
+.accessibility-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-a, .btn-theme, .btn-lang {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.btn-a:hover, .btn-theme:hover, .btn-lang:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--silk-gold);
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-badge {
+  color: #fff;
+  background: var(--tea-emerald);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Skip to Content Accessible Link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-red);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+  50% { box-shadow: 0 0 28px rgba(212, 175, 55, 0.8); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Responsive breakpoint utils */
+@media (max-width: 768px) {
+  .gov-topbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
