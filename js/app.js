@@ -131,7 +131,7 @@ function initSeasonalDestinations(seasonKey = 'monsoon') {
         <div class="card-footer" style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
           <span style="font-size: 0.8rem; font-weight: 600; color: var(--tea-emerald);">Govt Itinerary Ready</span>
           <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDestinationModal('${item.destId || 'sonbeel'}')">
-            Full Guide ↗
+            Full Dossier ↗
           </button>
         </div>
       </div>
@@ -169,7 +169,7 @@ function initDestinations(filterCategory = 'all') {
         <p style="font-size: 0.8rem; font-weight: 600; color: var(--tea-emerald); margin-bottom: 0.6rem;">${dest.assameseTitle}</p>
         <p class="card-desc">${dest.shortDesc}</p>
         <div class="card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">G2C E-Brochure Ready</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">G2C E-Dossier Ready</span>
           <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDestinationModal('${dest.id}')">
             Explore Guide ↗
           </button>
@@ -341,7 +341,7 @@ function setupSearchAndFilters() {
   }
 }
 
-/* 6. Modal Dialogs for Rich Guides & Reservations */
+/* 6. Modal Dialogs for Ultra-Premium G2C Single-Window Dossiers */
 function setupModals() {
   const modalOverlay = document.getElementById('portal-modal');
   const closeBtn = document.querySelector('.modal-close');
@@ -358,47 +358,194 @@ function setupModals() {
   }
 }
 
+/* 🌟 ULTRA-PREMIUM SINGLE-WINDOW DESTINATION DOSSIER (All-In-One G2C Kiosk) */
 function openDestinationModal(destId) {
   const dest = DESTINATIONS_DATA.find(d => d.id === destId) || DESTINATIONS_DATA[0];
+  const adv = FLOOD_ADVISORY_DATA.find(a => a.id === dest.advisoryId) || FLOOD_ADVISORY_DATA[0];
+  
+  // Find matching nearby lodging properties
+  const nearLodgings = LODGING_DATA.filter(l => (dest.lodgingIds && dest.lodgingIds.includes(l.id)) || l.district.includes(dest.district.split(' ')[0]));
+  const displayLodgings = nearLodgings.length ? nearLodgings : LODGING_DATA.slice(0, 3);
+  
+  // Find assigned certified bilingual guides
+  const assignedGuides = TOURIST_GUIDES_REGISTRY.filter(g => g.destIds && g.destIds.includes(dest.id));
+  const displayGuides = assignedGuides.length ? assignedGuides : TOURIST_GUIDES_REGISTRY.slice(0, 2);
 
   const modalOverlay = document.getElementById('portal-modal');
   const modalBody = document.getElementById('modal-body-content');
 
+  // Set broader styling for the dossier
+  document.querySelector('.modal-content').style.maxWidth = '920px';
+
   modalBody.innerHTML = `
-    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap;">
-      <span class="badge-awesome" style="font-size: 0.75rem;">Official Tourist Guide</span>
-      <span style="background: var(--tea-emerald); color: #fff; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">${dest.badge}</span>
-    </div>
-    <h2 style="font-size: 2.2rem; margin-bottom: 0.2rem;">${dest.title}</h2>
-    <h3 style="color: var(--primary-red); font-size: 1.1rem; font-weight: 600; margin-bottom: 1.2rem;">${dest.assameseTitle} — ${dest.district}</h3>
-    
-    <img src="${dest.image}" style="width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem; box-shadow: var(--shadow-md);" alt="${dest.title}">
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+    <!-- Top Government Seal & Breadcrumbs -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
       <div>
-        <strong style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">🗓 Recommended Visit Season</strong>
-        <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">${dest.bestSeason}</span>
+        <span class="badge-awesome" style="background: var(--tea-emerald); font-size: 0.75rem;">Government of Assam e-District Dossier</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem; font-weight: 700;">G2C Single-Window Registry</span>
       </div>
-      <div>
-        <strong style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">📍 GPS Coordinates</strong>
-        <span style="font-weight: 700; color: var(--tea-emerald); font-size: 0.95rem;">${dest.gpsCoordinates}</span>
-      </div>
+      <span style="background: var(--primary-red); color: #fff; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">${dest.badge}</span>
     </div>
 
-    <h4 style="font-size: 1.2rem; margin-bottom: 0.6rem;">About This Heritage Location</h4>
-    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">${dest.fullDescription}</p>
-
-    <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem;">🌟 Key Citizen & Tourist Highlights</h4>
-    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 2rem;">
-      ${dest.highlights.map(h => `<li style="background: var(--bg-surface); padding: 0.6rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600;">✨ ${h}</li>`).join('')}
-    </ul>
-
-    <div style="background: linear-gradient(135deg, var(--gov-topbar-bg), #0F172A); padding: 1.5rem; border-radius: var(--radius-md); color: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-      <div>
-        <h5 style="color: var(--silk-gold); font-size: 1.1rem; margin-bottom: 0.2rem;">Need a Govt Certified Local Guide or Permit?</h5>
-        <p style="font-size: 0.85rem; color: #CBD5E1;">Apply online through our G2C Single-Window Kiosk without middleman fees.</p>
+    <!-- Destination Main Header -->
+    <h1 style="font-size: 2.4rem; font-weight: 900; margin-bottom: 0.2rem; color: var(--text-primary);">${dest.title}</h1>
+    <h2 style="color: var(--primary-red); font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem;">${dest.assameseTitle} — 📍 ${dest.district}</h2>
+    
+    <!-- Hero Showcase Image -->
+    <div style="position: relative; margin-bottom: 2rem;">
+      <img src="${dest.image}" style="width: 100%; height: 350px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 2px solid var(--border-color);" alt="${dest.title}">
+      <div style="position: absolute; bottom: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); padding: 0.5rem 1rem; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 0.85rem; font-weight: 600;">
+        📍 GPS: ${dest.gpsCoordinates} • 🗓 Best Season: ${dest.bestSeason}
       </div>
-      <button class="btn btn-gold" onclick="openGuideModal('${dest.district}')">Book Guide & Passes ↗</button>
+    </div>
+    
+    <!-- 🚨 SECTION 1: REAL-TIME FLOOD ADVISORY & WEATHER STATUS -->
+    <div style="background: ${adv.statusBg}; border: 2px solid ${adv.statusColor}; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2.2rem; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
+        <span style="background: ${adv.statusColor}; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 0.4rem 0.9rem; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.5px;">
+          🚨 ASDMA Travel Status: ${adv.statusText}
+        </span>
+        <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">☀️ Live Weather: <strong>${dest.weather || '28°C | Moderate Breeze | AQI: 30'}</strong></span>
+      </div>
+      <p style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; line-height: 1.6; margin-bottom: 0.5rem;">
+        <strong>Current Condition & River Level:</strong> ${adv.waterLevel} • ${adv.advisoryMessage}
+      </p>
+      <div style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.7); padding: 0.6rem 0.8rem; border-radius: 6px; margin-top: 0.8rem; border-left: 4px solid ${adv.statusColor};">
+        <strong>🛣️ Roadway & Approach Advisory:</strong> ${adv.ferryRoadStatus} (Verified by District Disaster Management Authority, ${adv.updatedAt})
+      </div>
+    </div>
+
+    <!-- 📖 SECTION 2: COMPREHENSIVE OVERVIEW & HIGHLIGHTS -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 800; border-left: 5px solid var(--tea-emerald); padding-left: 0.8rem; margin-bottom: 0.8rem; color: var(--text-primary);">About This Ecological & Heritage Landmark</h3>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">${dest.fullDescription}</p>
+
+      <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem;">🌟 Official Citizen & Tourist Attractions</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem;">
+        ${dest.highlights.map(h => `<div style="background: var(--bg-main); padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: var(--tea-emerald); display: flex; align-items: center; gap: 0.5rem;"><span>✨</span> <span>${h}</span></div>`).join('')}
+      </div>
+    </div>
+
+    <!-- ✈️ SECTION 3: HOW TO REACH & OFFICIAL GOVERNMENT TARIFF BOARD -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+      <!-- How to Reach Kiosk -->
+      <div style="background: var(--bg-main); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+          🗺️ Transit & How to Reach
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+          <div>
+            <strong style="font-size: 0.85rem; color: var(--tea-emerald); display: block;">✈️ AIRWAY CONNECTION</strong>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">${dest.howToReach ? dest.howToReach.air : 'Nearest commercial airport: Guwahati LGBI or Silchar (IXS).'}</span>
+          </div>
+          <div>
+            <strong style="font-size: 0.85rem; color: var(--silk-gold); display: block;">🚆 RAILWAY NETWORK</strong>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">${dest.howToReach ? dest.howToReach.train : 'Connected via Northeast Frontier Railway network junctions.'}</span>
+          </div>
+          <div>
+            <strong style="font-size: 0.85rem; color: var(--primary-red); display: block;">🛣️ MOTOR ROADWAY</strong>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">${dest.howToReach ? dest.howToReach.road : 'Accessible via National Highways with ASTC luxury buses and taxis.'}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Official Tariff Board -->
+      <div style="background: var(--bg-main); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+          📜 Official Govt Tariff Schedule
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          ${(dest.officialTariff || [{item: "Citizen Entrance Fee", fee: "FREE"}, {item: "Guided Boating/Safari", fee: "Govt Regulated Tariff"}]).map(t => `
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.6rem;">
+              <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary);">${t.item}</span>
+              <span style="font-size: 0.85rem; font-weight: 800; background: rgba(10,92,54,0.15); color: var(--tea-emerald); padding: 0.2rem 0.6rem; border-radius: 4px;">${t.fee}</span>
+            </div>
+          `).join('')}
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem;">* Tariffs mandated under Assam Tourism Citizen Consumer Protection Circular.</p>
+      </div>
+    </div>
+
+    <!-- 🏡 SECTION 4: GOVT VERIFIED ACCOMMODATIONS NEAR THIS DESTINATION -->
+    <div style="margin-bottom: 2.5rem; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.8rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">🏡 Verified Stays & Hostels Near ${dest.title.split(' ')[0]}</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Direct zero-commission reservations with certified eco-homestay families & ATDC properties.</p>
+        </div>
+        <span class="badge-awesome" style="background: var(--tea-emerald);">🛡️ Inspected & Safe</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem;">
+        ${displayLodgings.map(lodge => `
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.72rem; background: rgba(212, 175, 55, 0.2); color: var(--silk-gold); font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 4px;">${lodge.type.toUpperCase()}</span>
+                <span style="font-size: 0.8rem; font-weight: 700;">⭐ ${lodge.rating}</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem;">${lodge.name}</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.8rem;">📍 ${lodge.location}</p>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">${lodge.description.substring(0, 90)}...</p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 1.15rem; font-weight: 800; color: var(--tea-emerald);">₹${lodge.price}</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted);">/${lodge.unit}</span>
+              </div>
+              <button class="btn btn-gold" style="padding: 0.45rem 0.85rem; font-size: 0.8rem;" onclick="openBookingModal('${lodge.id}')">Reserve Slot ↗</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- 👮‍♂️ SECTION 5: ASSIGNED CERTIFIED BILINGUAL TOURIST GUIDES REGISTRY -->
+    <div style="margin-bottom: 2.5rem; background: linear-gradient(135deg, var(--gov-topbar-bg), #0F172A); color: #fff; padding: 1.8rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.15);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap;">
+        <div>
+          <span class="badge-awesome" style="background: var(--primary-red); margin-bottom: 0.3rem; display: inline-block;">Citizen Employment & Safety Registry</span>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--silk-gold);">👮‍♂️ Certified Tourist Guides Assigned to ${dest.title.split(' ')[0]}</h3>
+          <p style="font-size: 0.9rem; color: #CBD5E1;">Government trained bilingual youth with verified background credentials and direct contact helpdesks.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        ${displayGuides.map(guide => `
+          <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); padding: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 250px;">
+              <h4 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.6rem;">
+                👮‍♂️ ${guide.name} <span style="font-size: 0.75rem; background: var(--tea-emerald); color: #fff; padding: 0.15rem 0.5rem; border-radius: 4px;">Verified License: ${guide.certId}</span>
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--silk-gold); margin-bottom: 0.4rem; font-weight: 600;">📍 Assigned Regions: ${guide.district} • ⭐ ${guide.rating}</p>
+              <p style="font-size: 0.85rem; color: #E2E8F0; margin-bottom: 0.4rem;">🗣️ <strong>Languages Spoken:</strong> ${guide.languages}</p>
+              <p style="font-size: 0.82rem; color: #94A3B8; font-style: italic;">"Specialties: ${guide.specialty}"</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 190px;">
+              <div style="background: #000; padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); text-align: center; border: 1px solid var(--silk-gold);">
+                <span style="font-size: 0.72rem; color: var(--text-muted); display: block; text-transform: uppercase;">Direct Govt Help Desk Tel:</span>
+                <span style="font-size: 1rem; font-weight: 800; color: var(--silk-gold); letter-spacing: 0.5px;">📞 ${guide.phone || '+91 94350-89000'}</span>
+              </div>
+              <button class="btn btn-primary" style="background: #ffffff; color: var(--tea-emerald); font-weight: 800; font-size: 0.85rem; padding: 0.5rem 1rem; width: 100%; text-align: center;" onclick="showToast('Initiating SMS Dispatch & Call to Certified Guide ${guide.name}...', '📞');">
+                Call / SMS Guide Now ↗
+              </button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- 🚨 SECTION 6: DISTRICT ADMINISTRATION & EMERGENCY MEDICAL HELPDESK -->
+    <div style="background: rgba(211,47,47,0.08); border-left: 5px solid var(--primary-red); padding: 1.2rem 1.5rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-red); margin-bottom: 0.2rem;">🏛️ District Administration & Tourist Protection Kiosk</h4>
+        <p style="font-size: 0.88rem; color: var(--text-primary); font-weight: 600;">${dest.adminContact || 'District Magistrate Office Helpline: 1363 | Police & Medical: 112'}</p>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">All tourist checkpoints are monitored under the Assam Tourist Police security network.</p>
+      </div>
+      <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="document.getElementById('portal-modal').classList.remove('active'); location.href='#helpdesk';">
+        Report Issue / Support 1363 →
+      </button>
     </div>
   `;
 
@@ -411,6 +558,8 @@ function openBookingModal(lodgeId) {
 
   const modalOverlay = document.getElementById('portal-modal');
   const modalBody = document.getElementById('modal-body-content');
+
+  document.querySelector('.modal-content').style.maxWidth = '700px';
 
   modalBody.innerHTML = `
     <div style="border-bottom: 2px solid var(--tea-emerald); padding-bottom: 1rem; margin-bottom: 1.5rem;">
@@ -465,6 +614,8 @@ function openGuideModal(targetDistrict = '') {
   const modalOverlay = document.getElementById('portal-modal');
   const modalBody = document.getElementById('modal-body-content');
 
+  document.querySelector('.modal-content').style.maxWidth = '800px';
+
   modalBody.innerHTML = `
     <div style="border-bottom: 2px solid var(--silk-gold); padding-bottom: 1rem; margin-bottom: 1.5rem;">
       <span class="badge-awesome" style="background: var(--primary-red);">Citizen Employment Kiosk</span>
@@ -473,19 +624,24 @@ function openGuideModal(targetDistrict = '') {
     </div>
 
     <div style="margin-bottom: 2rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <div style="display: flex; flex-direction: column; gap: 1.2rem;">
         ${TOURIST_GUIDES_REGISTRY.map(g => `
-          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div>
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.5rem;">
-                👮‍♂️ ${g.name} <span style="font-size: 0.75rem; background: var(--tea-emerald); color: #fff; padding: 0.1rem 0.5rem; border-radius: 4px;">${g.rating}</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-main); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 250px;">
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
+                👮‍♂️ ${g.name} <span style="font-size: 0.75rem; background: var(--tea-emerald); color: #fff; padding: 0.15rem 0.5rem; border-radius: 4px;">${g.rating}</span>
               </h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.2rem;">📍 Expert Regions: <strong>${g.district}</strong></p>
-              <p style="font-size: 0.8rem; color: var(--text-muted);">🗣️ Languages: ${g.languages} • ID: ${g.certId}</p>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.3rem;">📍 Expert Regions: <strong>${g.district}</strong> • License ID: ${g.certId}</p>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">🗣️ Languages: ${g.languages}</p>
+              <p style="font-size: 0.82rem; color: var(--tea-emerald); font-weight: 600;">"${g.specialty}"</p>
             </div>
-            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="showToast('Dispatching connection request to guide ${g.name}...', '📡'); document.getElementById('portal-modal').classList.remove('active');">
-              Request Hire
-            </button>
+            
+            <div style="text-align: right; min-width: 170px;">
+              <div style="font-size: 0.9rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem;">📞 ${g.phone}</div>
+              <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;" onclick="showToast('Dispatching connection request & SMS to guide ${g.name}...', '📡'); document.getElementById('portal-modal').classList.remove('active');">
+                Request Guide Hire ↗
+              </button>
+            </div>
           </div>
         `).join('')}
       </div>

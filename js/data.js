@@ -1,10 +1,10 @@
-/* Assam Tourism Portal — Comprehensive G2C Data Registry */
+/* Assam Tourism Portal — Comprehensive G2C Data Registry with Single-Window Interconnection */
 
 const DESTINATIONS_DATA = [
   {
     id: "sonbeel",
     title: "Sonbeel Wetland & Seasonal Lake",
-    assameseTitle: "শোণবীল, কৰীমনগৰ",
+    assameseTitle: "শোণবীল, কৰীমনগৰ (বৰাক উপত্যকা)",
     district: "Karimganj District (Barak Valley)",
     category: "wetland",
     badge: "Asia's 2nd Largest Wetland",
@@ -13,12 +13,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "A phenomenal seasonal wetland that transforms into an endless glittering freshwater lake during monsoon, featuring iconic traditional rowing boats and migratory bird colonies.",
     fullDescription: "Sonbeel (or Shonbeel) is one of the most remarkable ecological spectacles in Assam, situated in the Karimganj district of Barak Valley. During winter, the wetland drains out via the Shingla river to become lush farmland and pasture. When monsoon rains arrive, it inundates to form Asia's second-largest seasonal lake! Visitors can rent traditional wooden wooden boats, photograph dramatic sun settings over the reflecting waters, and relish authentic Barak Valley fish delicacies.",
     highlights: ["Traditional Sunrise Boat Expeditions", "Rare Winter Migratory Bird Watching", "Local Fisherman Folk Village tours", "Photographer's Paradise"],
-    gpsCoordinates: "24.7118° N, 92.4419° E"
+    gpsCoordinates: "24.7118° N, 92.4419° E",
+    advisoryId: "adv-sonbeel",
+    weather: "27°C | Gentle Tropical Breeze | AQI: 28 (Excellent)",
+    howToReach: {
+      air: "Nearest Airport: Silchar Airport (IXS) — approx. 54 km via Highway NH-8.",
+      train: "Nearest Railway Junction: Karimganj Junction & Badarpur (approx. 25 km).",
+      road: "Direct ASTC buses and app taxis available from Silchar and Karimganj town to Ramchandi entry point."
+    },
+    officialTariff: [
+      { item: "Citizen & Tourist Entrance Fee", fee: "FREE (Government Eco-Reserve)" },
+      { item: "Traditional Wooden Boat Tour (1 Hour)", fee: "₹300 per boat (Max 4 guests with lifejackets)" },
+      { item: "DSLR Camera & Videography Permit", fee: "FREE (No commercial shoot charges)" }
+    ],
+    adminContact: "Karimganj District Magistrate Helpdesk: 03843-222001 | Medical Support: 108",
+    lodgingIds: ["homestay-1", "hostel-1", "lodge-2"]
   },
   {
     id: "nagsankar",
     title: "Nagsankar Shiva Temple & Sacred Lake",
-    assameseTitle: "নাগশংকৰ মন্দিৰ, বিশ্বনাথ",
+    assameseTitle: "নাগশংকৰ মন্দিৰ, বিশ্বনাথ চাৰিআলি",
     district: "Biswanath District",
     category: "spiritual",
     badge: "4th Century Heritage & Sacred Turtles",
@@ -27,12 +41,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "An ancient 4th-century sanctuary dedicated to Lord Shiva, globally celebrated for its serene temple pond harboring hundreds of revered, century-old softshell turtles.",
     fullDescription: "Built originally in the late 4th century CE by King Nagasankar (and subsequently restored by Ahom King Su-sen-pha), the Nagsankar Temple is a premier spiritual architecture situated near Biswanath Chariali. The temple complex is anchored by an expansive holy pond that acts as a protected natural sanctuary for rare freshwater soft-shell turtles (Mohan/Kürma), some over a century old! Pilgrims and ecotourists alike feed the gentle turtles while admiring fine Ahom dynasty stone sculptures.",
     highlights: ["Interacting with Sacred Temple Turtles", "Maha Shivaratri Grand Fair", "Ancient Architectural Ahom Stone Carvings", "Peacock Sanctuary Walk"],
-    gpsCoordinates: "26.7942° N, 93.1830° E"
+    gpsCoordinates: "26.7942° N, 93.1830° E",
+    advisoryId: "adv-nagsankar",
+    weather: "29°C | Sunny & Serene | AQI: 31 (Good)",
+    howToReach: {
+      air: "Nearest Airport: Tezpur Airport (TEZ) — 65 km, or Guwahati LGBI Airport (210 km).",
+      train: "Nearest Railway Station: Biswanath Chariali Railway Station (approx. 9 km).",
+      road: "Seamless highway drive via NH-15 connecting Guwahati, Tezpur, and Biswanath."
+    },
+    officialTariff: [
+      { item: "Temple & Shrine Sanctuary Entry", fee: "FREE (Open Daily 5 AM — 8 PM)" },
+      { item: "Turtle Sanctuary Organic Feed Packet", fee: "₹20 (Official Temple Kiosk Counter)" },
+      { item: "VIP Quick Darshan Pass (Festival Days)", fee: "₹101 per citizen" }
+    ],
+    adminContact: "Biswanath District Administration Support: 03672-270022 | Police Squad: 112",
+    lodgingIds: ["homestay-2", "hostel-2", "hotel-1"]
   },
   {
     id: "kaziranga",
     title: "Kaziranga National Park & Tiger Reserve",
-    assameseTitle: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান",
+    assameseTitle: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান আৰু ব্যঘ্র সন্মুখীন",
     district: "Golaghat & Nagaon Districts",
     category: "wildlife",
     badge: "UNESCO World Heritage Site",
@@ -41,12 +69,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "Home to two-thirds of the planet's great one-horned Indian Rhinoceros, wild Asiatic water buffalos, and dense royal Bengal tiger populations across vast elephant grasses.",
     fullDescription: "Spanning the rich floodplains of the mighty Brahmaputra river, Kaziranga National Park represents one of the world's most successful conservation stories. Recognized by UNESCO as a World Heritage Site, this bio-diverse wonderland offers guided open-top jeep safaris and gentle dawn elephant-back excursions across four distinct tourism zones (Kohora, Bagori, Agoratoli, and Burapahar).",
     highlights: ["Dawn Elephant Back Safari", "Off-road Jeep Wildlife Trails", "Orchid & Biodiversity Park Tour", "Dolphins viewing at Brahmaputra lookout"],
-    gpsCoordinates: "26.6598° N, 93.3563° E"
+    gpsCoordinates: "26.6598° N, 93.3563° E",
+    advisoryId: "adv-kaziranga",
+    weather: "26°C | Monsoon Inundation Mode | AQI: 22 (Pristine)",
+    howToReach: {
+      air: "Nearest Airport: Jorhat Airport (JRH) — 97 km, or Guwahati LGBI (217 km).",
+      train: "Nearest Railway Station: Furkating Junction (approx. 75 km).",
+      road: "Directly located along NH-715 (Guwahati to Jorhat Highway). Regular luxury ASTC AC motorcoaches available."
+    },
+    officialTariff: [
+      { item: "Indian Citizen Park Entry Fee (Per Safari)", fee: "₹100 per adult | ₹40 per student" },
+      { item: "Official Jeep Safari Trip Fee (Exclusive Boat/Jeep)", fee: "₹2200 per jeep (Up to 6 guests)" },
+      { item: "Dawn Elephant Safari Seat (Govt Rate)", fee: "₹900 per seat (Includes Forest Guard fees)" }
+    ],
+    adminContact: "Field Director Office Kaziranga: 03776-268095 | Emergency Wildlife Rescue: 1077",
+    lodgingIds: ["lodge-1", "hostel-2", "homestay-2"]
   },
   {
     id: "majuli",
-    title: "Majuli Island & Neo-Vaishnavite Satras",
-    assameseTitle: "মাজুলী নদী দ্বীপ",
+    title: "Majuli River Island & Neo-Vaishnavite Satras",
+    assameseTitle: "মাজুলী বিশ্বৰ সৰ্ববৃহৎ নদী দ্বীপ",
     district: "Majuli District",
     category: "heritage",
     badge: "World's Largest River Island",
@@ -55,12 +97,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "Cradle of classical Assamese Neo-Vaishnavite culture and monastic traditions, featuring iconic handcrafted bamboo masks, organic pottery, and enchanting sunset ferry rides.",
     fullDescription: "Floating serenely amidst the braided channels of the Brahmaputra, Majuli is the largest inhabited river island on earth. Founded in the 15th century by the saint-reformer Srimanta Sankardev, Majuli preserves Assam's soulful living traditions inside monastic institutions known as Satras. Visitors can witness traditional maskcrafting at Samaguri Satra, un-pottered clay techniques in Salmora village, and enjoy organic Mising tribal hospitalities.",
     highlights: ["Mask Making Demonstrations at Samaguri Satra", "Bhaona & Sattriya Classical Dance Performances", "Sunset Ferry Cruise over Brahmaputra", "Mising Tribal Village Immersion"],
-    gpsCoordinates: "26.9535° N, 94.1118° E"
+    gpsCoordinates: "26.9535° N, 94.1118° E",
+    advisoryId: "adv-majuli",
+    weather: "28°C | River Breeze Moderate | AQI: 24 (Clean Air)",
+    howToReach: {
+      air: "Nearest Airport: Jorhat Airport (JRH) — 14 km to Nimati Ghat ferry terminal.",
+      train: "Nearest Railway Station: Jorhat Town Railway Station (approx. 12 km to ferry).",
+      road: "Reach Nimati Ghat (Jorhat) by roadway, then board official Inland Waterways Ro-Pax Ferry (approx 45 mins crossing to Kamalabari/Garamur Ghats)."
+    },
+    officialTariff: [
+      { item: "Inland Waterways Govt Ferry Ticket", fee: "₹30 per citizen passenger | ₹150 for two-wheelers" },
+      { item: "Satra Monastic Museum Visit", fee: "₹20 per visitor (Supports monastic heritage preservation)" },
+      { item: "Mask Making Artisan Interactive Workshop", fee: "₹250 per session at Samaguri Satra" }
+    ],
+    adminContact: "Majuli Deputy Commissioner Desk: 03775-224101 | River Ghat Emergency Police: 112",
+    lodgingIds: ["hostel-3", "homestay-3", "hotel-1"]
   },
   {
     id: "kamakhya",
     title: "Kamakhya Shaktipith (Nilachal Hills)",
-    assameseTitle: "কামাখ্যা মন্দিৰ, গুৱাহাটী",
+    assameseTitle: "মা কামাখ্যা শক্তিপীঠ, নীলাচল পাহাৰ",
     district: "Kamrup Metropolitan (Guwahati)",
     category: "spiritual",
     badge: "Supreme Shakti Peetha",
@@ -69,12 +125,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "Perched atop Nilachal Hill commanding panoramic vistas of Guwahati city and the Brahmaputra, this sacred temple is the most revered Shakta pilgrimage epicenter in India.",
     fullDescription: "The Kamakhya Temple is a celebrated ancient Hindu sanctuary dedicated to the Mother Goddess Kamakhya. Featuring classical Nilachala-style bee-hive shaped shikhara architecture with elaborate sculptured stone relief panels, it represents a synthesis of traditional indigenous and Aryan spiritual legacies. The annual Ambubachi Mela draws millions of mystics and pilgrims globally.",
     highlights: ["Sunset Viewpoint over Brahmaputra River", "Guided Architectural & Mythology Tour", "Nilachal Sacred Pond & Tantric Shrineline", "Quick Citizen Online Darshan Booking"],
-    gpsCoordinates: "26.1666° N, 91.7061° E"
+    gpsCoordinates: "26.1666° N, 91.7061° E",
+    advisoryId: "adv-kamakhya",
+    weather: "30°C | Elevated Hilltop Breeze | AQI: 42",
+    howToReach: {
+      air: "Nearest Airport: Lokpriya Gopinath Bordoloi Int Airport Guwahati (GAU) — 20 km.",
+      train: "Nearest Railway Station: Kamakhya Railway Station (3 km) and Guwahati Central (6 km).",
+      road: "Direct shared city taxis and official ATDC electric buses connect Fancy Bazar and Guwahati railway station directly up to Nilachal hilltop."
+    },
+    officialTariff: [
+      { item: "General Citizen Temple Darshan Queue", fee: "FREE (Standard Queue)" },
+      { item: "Govt E-District VIP Special Darshan Pass", fee: "₹501 (Includes scheduled time slot)" },
+      { item: "Guwahati-Umananda River Ferry Cruise", fee: "₹150 per head from Fancy Bazar ghat" }
+    ],
+    adminContact: "Kamakhya Temple Management Board & Metro Police: 0361-2734654 | Ambulance: 108",
+    lodgingIds: ["lodge-2", "hostel-1", "hotel-1"]
   },
   {
     id: "haflong",
     title: "Haflong Hill Station & Jatinga Ridge",
-    assameseTitle: "হাফ্লং পাহাৰীয়া চহৰ, ডিমা হাচাও",
+    assameseTitle: "হাফ্লং পাহাৰীয়া চহৰ আৰু বৰাইল শৃংগ",
     district: "Dima Hasao District",
     category: "hills",
     badge: "The Switzerland of the East",
@@ -83,12 +153,26 @@ const DESTINATIONS_DATA = [
     shortDesc: "Assam's sole elevated hill station, enchanting visitors with crystal blue lakes, misty blue Borail mountain vistas, indigenous flower orchids, and historic train tunnels.",
     fullDescription: "Nestled in the lush highlands of Dima Hasao, Haflong translates to 'Ant Hill' in the regional Dimasa language. Boasting cool weather, tranquil emerald waters at Haflong Lake, and breathtaking vistas of mountain bridges along the vintage railway line, it offers an unblemished nature retreat. Just 9km away is the mysterious birding village of Jatinga, famous for its autumnal ornithological phenomenon.",
     highlights: ["Boating across Haflong Emerald Lake", "Jatinga Bird Sanctuary Night Tower", "Heritage Train Bridge Trek at Harangajao", "Dimasa & Zeme Naga Tribal Culinary Tour"],
-    gpsCoordinates: "25.1764° N, 93.0204° E"
+    gpsCoordinates: "25.1764° N, 93.0204° E",
+    advisoryId: "adv-haflong",
+    weather: "21°C | Cool Misty Mountain Air | AQI: 18 (Alpine Quality)",
+    howToReach: {
+      air: "Nearest Airport: Silchar Airport (IXS) — approx. 104 km through mountain highways.",
+      train: "Nearest Railway Station: New Haflong Station (NHL) — Scenic Vistadome Train Route directly from Guwahati!",
+      road: "Smooth drive via NH-27 / Lumding-Haflong expressway featuring stunning elevated mountain viaduct bridges."
+    },
+    officialTariff: [
+      { item: "Haflong Lake Peddle Boating", fee: "₹100 for 30 minutes (2 Person Boat)" },
+      { item: "Jatinga Bird Sanctuary Observatory Tower", fee: "₹30 per visitor" },
+      { item: "Vistadome Mountain Express Ticket (Guwahati)", fee: "₹1150 (Indian Railways Tourist Chair Car)" }
+    ],
+    adminContact: "Dima Hasao Autonomous Council Helpline: 03673-236222 | Haflong Police Station: 112",
+    lodgingIds: ["homestay-4", "hostel-1", "homestay-1"]
   },
   {
     id: "sivasagar",
     title: "Sivasagar & Ahom Dynasty Monuments",
-    assameseTitle: "শিৱসાગৰ (আহোম ৰাজকীয় কীৰ্তিস্তম্ভ)",
+    assameseTitle: "শিৱসাগৰ (আহোম ৰাজকীয় কীৰ্তিস্তম্ভ আৰু ৰংঘৰ)",
     district: "Sivasagar District",
     category: "heritage",
     badge: "Asia's Oldest Amphitheater",
@@ -97,7 +181,21 @@ const DESTINATIONS_DATA = [
     shortDesc: "The monumental capital of the valiant Ahom dynasty who reigned unbeaten for 600 years, featuring majestic brick palaces, royal amphitheaters, and artificial tanks.",
     fullDescription: "Sivasagar transports citizens back into the glorious era of the Ahom Kingdom (1228–1826 CE). Key landmarks include the iconic 'Rang Ghar'—a distinctive two-story red royal pavilion that served as Asia's oldest amphitheater for buffalo fights and traditional Bihu celebrations—and 'Talatal Ghar', an ingenious subterranean military barracks with escape tunnels leading to the river.",
     highlights: ["Rang Ghar Royal Sports Pavilion Visit", "Talatal Ghar Underground Labyrinth", "Shiva Dol & Sivasagar Boro Pukhuri tank", "Tai-Ahom Royal Museum"],
-    gpsCoordinates: "26.9859° N, 94.6319° E"
+    gpsCoordinates: "26.9859° N, 94.6319° E",
+    advisoryId: "adv-sivasagar",
+    weather: "28°C | Pleasant Heritage Weather | AQI: 35",
+    howToReach: {
+      air: "Nearest Airport: Jorhat Airport (JRH) — approx. 58 km, or Dibrugarh Airport (75 km).",
+      train: "Nearest Railway Station: Simaluguri Junction (16 km) and Sivasagar Town Station.",
+      road: "Directly positioned along NH-37 in Upper Assam with luxury AC sleeper buses from Guwahati and Jorhat."
+    },
+    officialTariff: [
+      { item: "ASI Monument Entry Ticket (Rang Ghar / Talatal)", fee: "₹25 per Indian Citizen | ₹300 for Foreign Tourists" },
+      { item: "Tai-Ahom Royal Dynasty Museum", fee: "₹10 per adult" },
+      { item: "Official Heritage Battery Auto Tour (All Monuments)", fee: "₹450 for full half-day tour" }
+    ],
+    adminContact: "Sivasagar Deputy Commissioner Helpdesk: 03772-222123 | Heritage Police Unit: 112",
+    lodgingIds: ["hotel-1", "hostel-3", "lodge-1"]
   }
 ];
 
@@ -342,7 +440,7 @@ const LODGING_DATA = [
     id: "hostel-1",
     name: "Brahmaputra Backpackers Youth Hostel",
     type: "hostel",
-    location: "Guwahati (Near Uzan Bazar)",
+    location: "Guwahati (Near Uzan Bazar & Promenade)",
     district: "Kamrup Metro",
     price: "499",
     unit: "per dorm bed / night",
@@ -350,7 +448,7 @@ const LODGING_DATA = [
     verifiedBy: "Assam Tourism Certified (G2C)",
     rating: "4.8 ★",
     amenities: ["High-speed Wi-Fi", "Common Assamese Kitchen", "Locker Rooms", "Rooftop River Jam Space"],
-    description: "An vibrant community hub engineered for young domestic and international backpackers. Walking distance from the scenic Brahmaputra riverfront Promenade."
+    description: "An vibrant community hub engineered for young domestic and international backpackers. Walking distance from the scenic Brahmaputra riverfront Promenade and easy shuttle to Kamakhya & Sonbeel buses."
   },
   {
     id: "hostel-2",
@@ -364,7 +462,7 @@ const LODGING_DATA = [
     verifiedBy: "ATDC Youth Hub Approved",
     rating: "4.9 ★",
     amenities: ["Evening Bonfire", "Shared Jeep Safari Pooling", "Free Breakfast", "Bicycle Rental"],
-    description: "The ideal launchpad for solo travelers visiting Kaziranga. Organize shared jeep safaris directly at the reception and meet wildlife photographers from around the world."
+    description: "The ideal launchpad for solo travelers visiting Kaziranga and Nagsankar routes. Organize shared jeep safaris directly at the reception and meet wildlife photographers from around the world."
   },
   {
     id: "hostel-3",
@@ -394,7 +492,7 @@ const LODGING_DATA = [
     verifiedBy: "Govt Eco-Tourism Homestay",
     rating: "4.9 ★",
     amenities: ["Home-cooked Barak Valley Meals", "Private Boat Arrangement", "Wetland Viewing Deck", "Solar Hot Water"],
-    description: "Stay directly with an indigenous fisherman family on the elevated embankments of Sonbeel Lake. Includes traditional home-cooked Assamese bamboo shoot and river fish recipes."
+    description: "Stay directly with an indigenous fisherman family on the elevated embankments of Sonbeel Lake. Includes traditional home-cooked Assamese bamboo shoot and river fish recipes with verified morning boat access."
   },
   {
     id: "homestay-2",
@@ -484,9 +582,72 @@ const LODGING_DATA = [
   }
 ];
 
+/* 👮‍♂️ Certified Bilingual Tourist Guides Registry with Direct G2C Contacts */
 const TOURIST_GUIDES_REGISTRY = [
-  { name: "Prasenjit Phukan", district: "Kaziranga & Sivasagar", languages: "English, Assamese, Hindi", certId: "ASM-GU-1049", rating: "4.9 ★" },
-  { name: "Anomita Das", district: "Majuli & Jorhat", languages: "English, Assamese, Bengali", certId: "ASM-GU-2291", rating: "4.8 ★" },
-  { name: "Bikramjit Purkayastha", district: "Sonbeel & Barak Valley", languages: "English, Bengali, Sylheti", certId: "ASM-GU-3810", rating: "5.0 ★" },
-  { name: "David Dimasa", district: "Haflong & Jatinga", languages: "English, Hindi, Dimasa, Zeme", certId: "ASM-GU-4102", rating: "4.9 ★" }
+  { 
+    id: "guide-sonbeel",
+    name: "Bikramjit Purkayastha", 
+    district: "Sonbeel & Barak Valley", 
+    destIds: ["sonbeel"],
+    languages: "English, Bengali, Sylheti, Assamese", 
+    certId: "ASM-GU-3810", 
+    rating: "5.0 ★",
+    phone: "+91 94350-89021",
+    specialty: "Traditional rowing boat safaris, migratory winter birding, Barak Valley cultural heritage."
+  },
+  { 
+    id: "guide-kaziranga",
+    name: "Prasenjit Phukan", 
+    district: "Kaziranga & Biswanath (Nagsankar)", 
+    destIds: ["kaziranga", "nagsankar"],
+    languages: "English, Assamese, Hindi", 
+    certId: "ASM-GU-1049", 
+    rating: "4.9 ★",
+    phone: "+91 98640-11290",
+    specialty: "Senior wildlife tracker, dawn elephant trail guidance, 4th-century temple epigraphy."
+  },
+  { 
+    id: "guide-majuli",
+    name: "Anomita Das", 
+    district: "Majuli River Island & Jorhat", 
+    destIds: ["majuli"],
+    languages: "English, Assamese, Bengali, Hindi", 
+    certId: "ASM-GU-2291", 
+    rating: "4.8 ★",
+    phone: "+91 99572-88301",
+    specialty: "Sattriya classical dance traditions, Samaguri mask crafting workshops, Mising tribal homestay visits."
+  },
+  { 
+    id: "guide-haflong",
+    name: "David Dimasa", 
+    district: "Haflong & Jatinga Ridge", 
+    destIds: ["haflong"],
+    languages: "English, Hindi, Dimasa, Zeme Naga", 
+    certId: "ASM-GU-4102", 
+    rating: "4.9 ★",
+    phone: "+91 97061-34450",
+    specialty: "Borail mountain range trekking, Jatinga autumn bird watch observation, vintage train viaducts."
+  },
+  {
+    id: "guide-sivasagar",
+    name: "Hemanta Buragohain",
+    district: "Sivasagar & Ahom Royal Monuments",
+    destIds: ["sivasagar", "kamakhya"],
+    languages: "English, Assamese, Tai-Ahom dialect, Hindi",
+    certId: "ASM-GU-5012",
+    rating: "5.0 ★",
+    phone: "+91 98540-33421",
+    specialty: "600-year Ahom royal dynasty historian, Talatal Ghar subterranean labyrinth tours, Rang Ghar architecture."
+  },
+  {
+    id: "guide-kamakhya",
+    name: "Nilamani Sarma",
+    district: "Guwahati City & Nilachal Hills (Kamakhya)",
+    destIds: ["kamakhya"],
+    languages: "English, Sanskrit, Assamese, Bengali, Hindi",
+    certId: "ASM-GU-1102",
+    rating: "4.9 ★",
+    phone: "+91 97060-12345",
+    specialty: "Kamakhya Shaktipith mythology, Tantric architectural heritage, Brahmaputra riverfront cruise booking."
+  }
 ];
