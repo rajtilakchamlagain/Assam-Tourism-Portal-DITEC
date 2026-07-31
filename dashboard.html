@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Dashboard | Assam Tourism Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- ePrastuti Gov Topbar -->
+  <div class="gov-topbar">
+    <div class="container">
+      <div class="gov-topbar-left">
+        <div class="gov-emblem-text">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Seal_of_Assam.svg" alt="Assam Govt Emblem" style="height: 24px;">
+          Government of Assam <span>|</span> Dept. of Tourism & ATDC
+        </div>
+      </div>
+      <div class="gov-topbar-right">
+        <div class="accessibility-tools">
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='14px'">A-</button>
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='16px'">A</button>
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='18px'">A+</button>
+          <button class="btn-theme" onclick="document.body.dataset.theme = document.body.dataset.theme === 'high-contrast' ? '' : 'high-contrast'">⬛ High Contrast</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="branding-group">
+        <a href="index.html" class="portal-title">
+          <h1>Awesome Assam</h1>
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link">Stay (Booking)</a>
+        <a href="dashboard.html" class="nav-link active">My Dashboard</a>
+        <a href="owner-dashboard.html" class="nav-link" style="color: var(--text-muted); font-size: 0.8rem;">Switch to Owner Panel →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.2rem;">Rajdeep Saikia</h3>
+        <p style="font-size: 0.8rem; color: var(--tea-emerald); font-weight: 700;">✓ Aadhaar Verified (DigiLocker)</p>
+      </div>
+
+      <nav>
+        <a href="#bookings" class="sidebar-link active">📅 My Bookings</a>
+        <a href="#wishlist" class="sidebar-link">♡ Saved Properties</a>
+        <a href="#reviews" class="sidebar-link">⭐ My Reviews</a>
+        <a href="#profile" class="sidebar-link">👤 Identity & Profile</a>
+        <a href="#grievances" class="sidebar-link" style="color: var(--primary-red); border-left: 3px solid var(--primary-red);">🚨 CPGRAMS Grievances</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2 style="margin-bottom: 0.5rem; font-size: 2rem;">Tourist Dashboard</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Manage your government-verified bookings and travel itinerary.</p>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Upcoming Trips</div>
+          <div class="kpi-value">1</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Completed Stays</div>
+          <div class="kpi-value">2</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Saved Wishlist</div>
+          <div class="kpi-value">4</div>
+        </div>
+      </div>
+
+      <!-- Bookings List -->
+      <h3 style="margin-bottom: 1rem;">Recent Bookings</h3>
+      
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=200&auto=format&fit=crop" style="width: 100px; height: 80px; object-fit: cover; border-radius: var(--radius-sm);" alt="Lodge">
+          <div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.3rem;">
+              <span class="badge" style="background: rgba(10,92,54,0.1); color: var(--tea-emerald);">CONFIRMED</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">ID: ASM-KZR-84921</span>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">ATDC Kaziranga Safari Lodge</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">15 Aug - 18 Aug 2026 (3 Nights) • 2 Guests</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: right;">
+          <strong style="font-size: 1.2rem; color: var(--text-primary);">₹14,817</strong>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="alert('Downloading G2C PDF Voucher...')">Download Voucher</button>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grievance Section -->
+      <div id="grievances" style="background: rgba(211,47,47,0.05); border: 1px solid rgba(211,47,47,0.2); border-left: 4px solid var(--primary-red); padding: 1.5rem; border-radius: var(--radius-md); margin-top: 3rem;">
+        <h3 style="color: var(--primary-red); margin-bottom: 0.5rem;">🚨 Submit Tourist Grievance (CPGRAMS)</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">If you faced issues with overcharging, hygiene, or unverified tourist guides, lodge a formal complaint directly with the District Magistrate.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Grievance submitted to District Magistrate via CPGRAMS!');">
+          <div class="form-group">
+            <label class="form-label">Select Booking / Property</label>
+            <select class="form-select">
+              <option>ATDC Kaziranga Safari Lodge (ASM-KZR-84921)</option>
+              <option>Mising Homestay, Majuli</option>
+              <option>Other / Tourist Guide Issue</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nature of Complaint</label>
+            <select class="form-select">
+              <option>Overcharging beyond Official Tariff</option>
+              <option>Poor Hygiene / Unsafe Conditions</option>
+              <option>Unauthorized Tourist Guide</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Details</label>
+            <textarea class="form-input" rows="4" placeholder="Describe the incident..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-secondary">Submit Formal Grievance</button>
+        </form>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -8,8 +8,7 @@
   <meta name="keywords" content="Assam Tourism, G2C, Homestays, Hostels, Flood Advisory, ASDMA, Sonbeel, Nagsankar, Kaziranga, Majuli, Haflong, Sivasagar, Government of Assam">
   
   <!-- CSS Design System & Components -->
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -73,12 +72,10 @@
       <nav aria-label="Primary Navigation">
         <button class="nav-toggle" id="nav-toggle" aria-label="Open mobile menu">☰</button>
         <ul class="nav-menu">
-          <li><a href="#hero" class="nav-link">Home</a></li>
-          <li><a href="#flood-advisory" class="nav-link" style="color: #D32F2F; font-weight: 700;">🌊 Live Flood Advisory</a></li>
-          <li><a href="#seasonal" class="nav-link">📅 Seasonal Stays</a></li>
-          <li><a href="#destinations" class="nav-link">Discover Places</a></li>
-          <li><a href="#lodging" class="nav-link">Hostels & Homestays</a></li>
-          <li><a href="#helpdesk" class="nav-link" style="font-weight: 800;">🚨 Helpline 1363</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="search.html" class="nav-link">Stay (Booking)</a></li>
+          <li><a href="#flood-advisory" class="nav-link" style="color: #D32F2F; font-weight: 700;">🌊 Live Flood</a></li>
+          <li><a href="dashboard.html" class="nav-link" style="border: 1px solid var(--tea-emerald); padding: 0.3rem 0.8rem; border-radius: 20px;">My Bookings</a></li>
         </ul>
       </nav>
 
@@ -131,7 +128,7 @@
               </select>
             </div>
 
-            <button class="btn btn-primary" id="hero-search-btn" style="padding: 1rem 2rem; font-size: 1rem; height: 100%;">
+            <button class="btn btn-primary" id="hero-search-btn" style="padding: 1rem 2rem; font-size: 1rem; height: 100%;" onclick="window.location.href='search.html'">
               🔍 Explore Verified Stays →
             </button>
           </div>

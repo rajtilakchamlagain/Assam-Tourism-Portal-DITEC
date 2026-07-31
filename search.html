@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Government Registered Lodging | Assam Tourism Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- ePrastuti Gov Topbar -->
+  <div class="gov-topbar">
+    <div class="container">
+      <div class="gov-topbar-left">
+        <div class="gov-emblem-text">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Seal_of_Assam.svg" alt="Assam Govt Emblem" style="height: 24px;">
+          Government of Assam <span>|</span> Dept. of Tourism & ATDC
+        </div>
+      </div>
+      <div class="gov-topbar-right">
+        <div class="accessibility-tools">
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='14px'">A-</button>
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='16px'">A</button>
+          <button class="btn-a" onclick="document.documentElement.style.fontSize='18px'">A+</button>
+          <button class="btn-theme" onclick="document.body.dataset.theme = document.body.dataset.theme === 'high-contrast' ? '' : 'high-contrast'">⬛ High Contrast</button>
+        </div>
+        <div class="lang-selector">
+          <select style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.2rem; border-radius: 4px;">
+            <option style="color:#000">English</option>
+            <option style="color:#000">অসমীয়া</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="branding-group">
+        <a href="index.html" class="portal-title">
+          <h1>Awesome Assam</h1>
+          <div class="subtitle">Official Tourism Portal · Govt of Assam</div>
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link active">Stay (Booking)</a>
+        <a href="index.html#packages" class="nav-link">Packages</a>
+        <a href="dashboard.html" class="nav-link" style="border: 1px solid var(--tea-emerald); padding: 0.3rem 0.8rem; border-radius: 20px;">My Bookings</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Results Container -->
+  <div class="container mt-4 mb-4" style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem;">
+    <!-- Sidebar Filters -->
+    <aside style="background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); height: fit-content; position: sticky; top: 100px;">
+      <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Filters</h3>
+      
+      <div class="form-group">
+        <label class="form-label">Property Type</label>
+        <div>
+          <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+            <input type="checkbox" checked> ATDC Govt Lodge (4)
+          </label>
+          <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+            <input type="checkbox" checked> Eco-Homestay (14)
+          </label>
+          <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+            <input type="checkbox"> Heritage Hotel (8)
+          </label>
+          <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+            <input type="checkbox"> Youth Hostel (6)
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group mt-4">
+        <label class="form-label">Price Range (Per Night)</label>
+        <input type="range" min="500" max="15000" value="12000" style="width: 100%;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+          <span>₹500</span>
+          <span>₹12,000+</span>
+        </div>
+      </div>
+
+      <div class="form-group mt-4">
+        <label class="form-label">Amenities</label>
+        <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+          <input type="checkbox" checked> Safari Access
+        </label>
+        <label style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem; cursor: pointer;">
+          <input type="checkbox"> Meals Included
+        </label>
+      </div>
+
+      <button class="btn btn-primary btn-block mt-4">Apply Filters</button>
+    </aside>
+
+    <!-- Main Results -->
+    <main>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 style="font-size: 1.8rem;">Stays in Kaziranga & Surroundings</h2>
+          <p style="color: var(--text-muted);">28 government-verified properties found</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <button class="btn btn-secondary" onclick="alert('NIC Bharat Maps module loading...')">🗺️ Map View</button>
+          <select class="form-select" style="width: auto;">
+            <option>Recommended</option>
+            <option>Price: Low to High</option>
+            <option>Highest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Result Card 1 -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); transition: 0.2s;">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop" style="width: 300px; object-fit: cover;" alt="Kaziranga Safari Lodge">
+        <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.2rem;">📍 Kohora, Kaziranga National Park</p>
+              <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.4rem;">ATDC Kaziranga Safari Lodge</h3>
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                <span class="badge badge-success">✓ GOVT VERIFIED</span>
+                <span class="badge badge-warning">⭐ TOP RATED</span>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 1.6rem; font-weight: 800; color: var(--tea-emerald);">₹4,200</span>
+              <p style="font-size: 0.75rem; color: var(--text-muted);">per night<br>incl. all taxes</p>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Situated at the edge of Kaziranga National Park, this ATDC-registered lodge offers exclusive safari packages and direct access to the UNESCO World Heritage Site.</p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <div style="display: flex; gap: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+              <span>🦏 Safari</span>
+              <span>📶 Wi-Fi</span>
+              <span>♿ Accessible</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="property.html" class="btn btn-secondary" style="padding: 0.4rem 1rem;">View Details</a>
+              <a href="booking.html" class="btn btn-primary" style="padding: 0.4rem 1rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Card 2 -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); transition: 0.2s;">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=400&auto=format&fit=crop" style="width: 300px; object-fit: cover;" alt="Mising Eco Homestay">
+        <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.2rem;">📍 Kamalabari, Majuli Island</p>
+              <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.4rem;">Mising Stilt Riverside Homestay</h3>
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                <span class="badge badge-success">✓ GOVT VERIFIED</span>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 1.6rem; font-weight: 800; color: var(--tea-emerald);">₹1,100</span>
+              <p style="font-size: 0.75rem; color: var(--text-muted);">per night<br>incl. all taxes</p>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Experience genuine indigenous Mising tribal architecture raised on eco-friendly timber stilts. Host family guides guests through traditional silk loom weaving demonstrations.</p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <div style="display: flex; gap: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+              <span>🚣 River Access</span>
+              <span>🍲 Home Meals</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="property.html" class="btn btn-secondary" style="padding: 0.4rem 1rem;">View Details</a>
+              <a href="booking.html" class="btn btn-primary" style="padding: 0.4rem 1rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

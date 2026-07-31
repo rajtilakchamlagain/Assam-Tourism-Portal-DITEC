@@ -245,7 +245,7 @@ function initLodging(filterType = 'all', searchQuery = '') {
             <span class="price">₹${item.price}</span>
             <span class="unit">/${item.unit}</span>
           </div>
-          <button class="btn btn-gold" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openBookingModal('${item.id}')">
+          <button class="btn btn-gold" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="window.location.href='property.html'">
             Reserve G2C Slot
           </button>
         </div>
@@ -493,7 +493,7 @@ function openDestinationModal(destId) {
                 <span style="font-size: 1.15rem; font-weight: 800; color: var(--tea-emerald);">₹${lodge.price}</span>
                 <span style="font-size: 0.72rem; color: var(--text-muted);">/${lodge.unit}</span>
               </div>
-              <button class="btn btn-gold" style="padding: 0.45rem 0.85rem; font-size: 0.8rem;" onclick="openBookingModal('${lodge.id}')">Reserve Slot ↗</button>
+              <button class="btn btn-gold" style="padding: 0.45rem 0.85rem; font-size: 0.8rem;" onclick="window.location.href='property.html'">Reserve Slot ↗</button>
             </div>
           </div>
         `).join('')}

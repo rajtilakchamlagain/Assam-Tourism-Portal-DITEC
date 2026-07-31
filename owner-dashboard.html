@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Owner Dashboard | ATDC</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background: #F1F5F9;">
+  <!-- B2G Admin Topbar -->
+  <div class="gov-topbar" style="background: #0F172A; border-bottom: 2px solid var(--silk-gold);">
+    <div class="container">
+      <div class="gov-topbar-left">
+        <div class="gov-emblem-text">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Seal_of_Assam.svg" alt="Assam Govt Emblem" style="height: 24px;">
+          ATDC Property Owner Network <span>|</span> Government of Assam
+        </div>
+      </div>
+      <div class="gov-topbar-right">
+        <span style="font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--silk-gold);">License: ATDC/KZR/2024/0089 (Valid)</span>
+        <button class="btn btn-primary" style="padding: 0.2rem 0.8rem; font-size: 0.8rem;" onclick="location.href='index.html'">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" style="background: #1E293B; color: #fff;">
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.2rem;">Kaziranga Safari Lodge</h3>
+        <p style="font-size: 0.8rem; color: var(--tea-emerald); font-weight: 700;">✓ Govt Verified Owner</p>
+      </div>
+
+      <nav>
+        <a href="#" class="sidebar-link active" style="color: #fff; background: rgba(255,255,255,0.1);">📊 Revenue & Analytics</a>
+        <a href="#" class="sidebar-link" style="color: #cbd5e1;">📋 Manage Bookings</a>
+        <a href="#" class="sidebar-link" style="color: #cbd5e1;">🗓️ Room Availability</a>
+        <a href="#" class="sidebar-link" style="color: #cbd5e1;">⭐ Guest Reviews</a>
+        <a href="#" class="sidebar-link" style="color: #cbd5e1;">🏛️ ATDC Compliance</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+        <div>
+          <h2 style="font-size: 2rem; color: var(--text-primary); margin-bottom: 0.2rem;">Welcome back, R. Borah</h2>
+          <p style="color: var(--text-secondary);">Overview for Kaziranga Safari Lodge (July 2026)</p>
+        </div>
+        <div>
+          <button class="btn btn-gold">Update Inventory</button>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card" style="border-top: 4px solid #3B82F6;">
+          <div class="kpi-label">Total Bookings</div>
+          <div class="kpi-value">142</div>
+          <div style="font-size: 0.75rem; color: var(--tea-emerald); margin-top: 0.5rem; font-weight: 700;">↑ 12% vs last month</div>
+        </div>
+        <div class="kpi-card" style="border-top: 4px solid var(--tea-emerald);">
+          <div class="kpi-label">Revenue (July)</div>
+          <div class="kpi-value">₹4.85L</div>
+          <div style="font-size: 0.75rem; color: var(--tea-emerald); margin-top: 0.5rem; font-weight: 700;">↑ 18% (Zero OTA Commission)</div>
+        </div>
+        <div class="kpi-card" style="border-top: 4px solid #8B5CF6;">
+          <div class="kpi-label">Occupancy Rate</div>
+          <div class="kpi-value">88%</div>
+          <div style="font-size: 0.75rem; color: var(--tea-emerald); margin-top: 0.5rem; font-weight: 700;">↑ 5% Peak Monsoon</div>
+        </div>
+        <div class="kpi-card" style="border-top: 4px solid var(--silk-gold);">
+          <div class="kpi-label">Avg. Rating</div>
+          <div class="kpi-value">4.9⭐</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Based on 89 reviews</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        
+        <!-- Live Analytics Chart Placeholder -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Daily Revenue — July 2026</h3>
+          
+          <!-- Mock Bar Chart using CSS -->
+          <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 200px; padding-bottom: 2rem; border-bottom: 1px dashed var(--border-color); position: relative;">
+            <div style="width: 40px; background: #94A3B8; height: 60%; border-radius: 4px 4px 0 0; position: relative;">
+              <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700;">₹15K</span>
+              <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: var(--text-muted);">Mon</span>
+            </div>
+            <div style="width: 40px; background: var(--tea-emerald); height: 80%; border-radius: 4px 4px 0 0; position: relative;">
+              <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700;">₹19K</span>
+              <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: var(--text-muted);">Tue</span>
+            </div>
+            <div style="width: 40px; background: var(--tea-emerald-dark); height: 95%; border-radius: 4px 4px 0 0; position: relative;">
+              <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700;">₹24K</span>
+              <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: var(--text-muted);">Wed</span>
+            </div>
+            <div style="width: 40px; background: var(--tea-emerald); height: 75%; border-radius: 4px 4px 0 0; position: relative;">
+              <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700;">₹18K</span>
+              <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: var(--text-muted);">Thu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Incoming Bookings Table -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Recent G2C Bookings</h3>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">Rajdeep S. — 2 Guests</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Jungle Deluxe • 15-18 Aug</span>
+            </div>
+            <span class="badge" style="background: rgba(10,92,54,0.1); color: var(--tea-emerald);">Confirmed</span>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">A. Das — 4 Guests</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Safari Suite • 27-30 Aug</span>
+            </div>
+            <span class="badge" style="background: rgba(10,92,54,0.1); color: var(--tea-emerald);">Confirmed</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">M. Khan — 2 Guests</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Jungle Deluxe • 28-31 Aug</span>
+            </div>
+            <span class="badge" style="background: rgba(212,175,55,0.2); color: #B45309;">Pending UPI</span>
+          </div>
+          
+          <a href="#" style="display: block; text-align: center; font-size: 0.85rem; color: #3B82F6; margin-top: 1.5rem; font-weight: 600;">View all bookings →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

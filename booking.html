@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Booking Checkout | Assam Tourism Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- ePrastuti Gov Topbar -->
+  <div class="gov-topbar">
+    <div class="container">
+      <div class="gov-topbar-left">
+        <div class="gov-emblem-text">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Seal_of_Assam.svg" alt="Assam Govt Emblem" style="height: 24px;">
+          Government of Assam <span>|</span> Dept. of Tourism & ATDC
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header" style="height: 60px;">
+    <div class="container" style="justify-content: center;">
+      <h1 style="font-size: 1.2rem; color: var(--text-primary);">G2C Secure Reservation Portal</h1>
+    </div>
+  </header>
+
+  <div class="container mt-4 mb-4">
+    <!-- Progress Indicator -->
+    <div class="checkout-progress" style="max-width: 800px; margin: 0 auto 3rem auto;">
+      <div class="step completed">
+        <div class="step-circle">✓</div>
+        <div class="step-label">Select Room</div>
+      </div>
+      <div class="step active">
+        <div class="step-circle">2</div>
+        <div class="step-label">Guest Details</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Payment</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <div class="step-label">Confirmation</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 400px; gap: 3rem;">
+      <!-- Main Form Area -->
+      <div>
+        <h2 style="margin-bottom: 1.5rem;">Guest Information</h2>
+        
+        <!-- DigiLocker Integration -->
+        <button class="btn-digilocker" onclick="alert('Redirecting to NIC DigiLocker OAuth for secure Aadhaar verification...')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Fetch details securely via Aadhaar-linked DigiLocker
+        </button>
+
+        <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-input" placeholder="As per official ID" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-input" placeholder="As per official ID" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" placeholder="For digital voucher" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number (Indian) *</label>
+              <input type="tel" class="form-input" placeholder="+91" required>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-bottom: 1.5rem;">Payment (NIC ePay)</h2>
+        <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <!-- Payment Tabs -->
+          <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem;">
+            <div style="padding: 0.8rem 1rem; border-bottom: 3px solid var(--tea-emerald); font-weight: 700; color: var(--tea-emerald); cursor: pointer;">UPI / QR</div>
+            <div style="padding: 0.8rem 1rem; color: var(--text-muted); cursor: pointer; font-weight: 600;">Credit/Debit Card</div>
+            <div style="padding: 0.8rem 1rem; color: var(--text-muted); cursor: pointer; font-weight: 600;">Net Banking</div>
+          </div>
+
+          <div style="text-align: center; padding: 2rem 0;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" style="width: 180px; height: 180px; margin-bottom: 1rem;" alt="UPI QR">
+            <p style="font-weight: 700; margin-bottom: 0.5rem;">Scan to pay with any UPI App</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Google Pay, PhonePe, Paytm, BHIM</p>
+          </div>
+          
+          <button class="btn btn-primary btn-block" style="padding: 1rem; font-size: 1.1rem;" onclick="document.getElementById('confirmation-modal').classList.add('active');">
+            Simulate Payment Success →
+          </button>
+        </div>
+      </div>
+
+      <!-- Price Summary Sidebar -->
+      <div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; position: sticky; top: 100px;">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop" style="width: 100%; height: 160px; object-fit: cover;" alt="Lodge">
+          <div style="padding: 1.5rem;">
+            <p style="font-size: 0.75rem; color: var(--tea-emerald); font-weight: 700; margin-bottom: 0.3rem;">✓ GOVT VERIFIED</p>
+            <h3 style="margin-bottom: 1.5rem;">ATDC Kaziranga Safari Lodge</h3>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.8rem;">
+              <span style="color: var(--text-muted);">Check-in</span>
+              <strong>Fri, 15 Aug 2026</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.8rem;">
+              <span style="color: var(--text-muted);">Check-out</span>
+              <strong>Mon, 18 Aug 2026</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 1.5rem;">
+              <span style="color: var(--text-muted);">Room</span>
+              <strong>Jungle View Deluxe (3 Nights)</strong>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed var(--border-color); margin-bottom: 1.5rem;">
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.8rem;">
+              <span>₹4,200 x 3 nights</span>
+              <span>₹12,600</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.8rem;">
+              <span>ATDC Service Fee</span>
+              <span>₹630</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 1.5rem;">
+              <span>GST (12%)</span>
+              <span>₹1,587</span>
+            </div>
+
+            <!-- Govt Employee Coupon -->
+            <div style="background: rgba(212,175,55,0.08); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--silk-gold); margin-bottom: 1.5rem;">
+              <label style="font-size: 0.75rem; font-weight: 700; color: #B45309; display: block; margin-bottom: 0.4rem;">Govt Employee / LTC Coupon</label>
+              <div class="coupon-box">
+                <input type="text" class="form-input" placeholder="e.g. ASSAMGOV15" style="padding: 0.4rem 0.6rem;">
+                <button class="btn btn-gold" style="padding: 0.4rem 0.8rem;" onclick="alert('Coupon Applied! ₹1,890 discount deducted from total.')">Apply</button>
+              </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 800; color: var(--text-primary);">
+              <span>Total Amount</span>
+              <span>₹14,817</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal (Success) -->
+  <div id="confirmation-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px; text-align: center; padding: 3rem 2rem;">
+      <div style="width: 80px; height: 80px; background: var(--tea-emerald); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 1.5rem auto;">✓</div>
+      <h2 style="margin-bottom: 1rem;">Payment Successful!</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Your reservation at ATDC Kaziranga Safari Lodge is confirmed.</p>
+      
+      <div style="background: var(--bg-main); padding: 1.5rem; border-radius: var(--radius-md); border: 1px dashed var(--border-color); margin-bottom: 2rem;">
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Booking Reference ID</p>
+        <p style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); letter-spacing: 2px;">ASM-KZR-84921</p>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">A confirmation SMS and email with your G2C Digital Voucher have been dispatched.</p>
+      
+      <a href="dashboard.html" class="btn btn-primary btn-block">Go to My Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
